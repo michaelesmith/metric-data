@@ -1,0 +1,29 @@
+{
+    "name": "michaelesmith/event-data",
+    "version": "0.1",
+    "description": "Abstracts event data handling",
+    "keywords": ["event", "event data"],
+    "homepage": "https://github.com/michaelesmith/EventData",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Smith",
+            "email": "sitecross@gmail.com",
+            "homepage": "http://michaelsmithonline.com/"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/michaelesmith/EventData/issues"
+    },
+    "require": {
+        "php": ">=5.4"
+    },
+    "suggest": {
+        "keen-io/keen-io": "Allows data to be sent to the KeenIO service"
+    },
+    "autoload": {
+        "psr-0": { "MS\\EventData": "src/" }
+    },
+    "minimum-stability": "beta"
+}
