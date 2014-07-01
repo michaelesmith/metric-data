@@ -46,6 +46,22 @@ class EventDataManager
     }
 
     /**
+     * @return \MS\EventData\Storage\StorageInterface
+     */
+    public function getStorage()
+    {
+        return $this->storage;
+    }
+
+    /**
+     * @return \MS\EventData\Logger\LoggerInterface[]
+     */
+    public function getLoggers()
+    {
+        return $this->loggers;
+    }
+
+    /**
      * @param LoggerInterface $logger
      */
     public function addLogger(LoggerInterface $logger)
@@ -83,6 +99,14 @@ class EventDataManager
     public function getDelayed()
     {
         return $this->delayed;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function hasFlushed()
+    {
+        return count($this->events) == 0;
     }
 
     /**
