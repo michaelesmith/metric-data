@@ -17,7 +17,7 @@ class GenericLoggedEvent {
      */
     public $result;
 
-    public function __construct(EventInterface $event, ResultInterface $result)
+    public function __construct(EventInterface $event, ResultInterface $result = null)
     {
         $this->event = $event;
         $this->result = $result;

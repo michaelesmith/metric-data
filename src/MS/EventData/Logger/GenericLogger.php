@@ -12,9 +12,17 @@ class GenericLogger implements LoggerInterface {
      */
     protected $events = [];
 
-    public function log(EventInterface $event, ResultInterface $result)
+    public function log(EventInterface $event, ResultInterface $result = null)
     {
         $this->events[] = new GenericLoggedEvent($event, $result);
+    }
+
+    /**
+     * @return \MS\EventData\Logger\GenericLoggedEvent[]
+     */
+    public function getEvents()
+    {
+        return $this->events;
     }
 
 } 
