@@ -17,6 +17,7 @@ class Result implements ResultInterface {
     public function __construct($data, $error = false)
     {
         $this->data = $data;
+        $this->error = $error;
     }
 
     /**

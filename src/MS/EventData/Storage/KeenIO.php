@@ -6,7 +6,7 @@ use KeenIO\Client\KeenIOClient;
 use MS\EventData\Event\EventInterface;
 use MS\EventData\Storage\Result\Result;
 
-class KeenIO implements StorageInterface {
+class KeenIO implements StorageInterface, StorageConfigurationInterface {
 
     /**
      * @var \KeenIO\Client\KeenIOClient
@@ -18,13 +18,22 @@ class KeenIO implements StorageInterface {
         $this->client = $client;
     }
 
+    public function getConfiguration()
+    {
+        return $this->client->getConfig()->toArray();
+    }
+
     /**
      * @param EventInterface $event
      * @return \MS\EventData\Storage\Result\ResultInterface
      */
     public function store(EventInterface $event)
     {
-        $result = $this->client->addEvent($event->getCollection(), $event->getPayload());
+        try {
+            $result = $this->client->addEvent($event->getCollection(), $event->getPayload());
+        } catch (\Exception $e) {
+            return new Result($e->getMessage(), true);
+        }
 
         return new Result($result, false);
     }
