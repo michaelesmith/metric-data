@@ -25,5 +25,10 @@
     "autoload": {
         "psr-0": { "MS\\EventData": "src/" }
     },
-    "minimum-stability": "beta"
+    "minimum-stability": "beta",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
 }
