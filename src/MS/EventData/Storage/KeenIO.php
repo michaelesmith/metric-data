@@ -20,7 +20,7 @@ class KeenIO implements StorageInterface, StorageConfigurationInterface {
 
     public function getConfiguration()
     {
-        return $this->client->getConfig()->toArray();
+        return $this->client->getConfig();
     }
 
     /**
