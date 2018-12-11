@@ -1,34 +1,33 @@
 {
-    "name": "michaelesmith/event-data",
-    "version": "0.1",
-    "description": "Abstracts event data handling",
-    "keywords": ["event", "event data"],
-    "homepage": "https://github.com/michaelesmith/EventData",
+    "name": "michaelesmith/metric-data",
+    "description": "abstract metric data storage system",
+    "keywords": ["metric"],
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "Michael Smith",
-            "email": "sitecross@gmail.com",
-            "homepage": "http://michaelsmithonline.com/"
+            "email": "sitecross@gmail.com"
         }
     ],
-    "support": {
-        "issues": "https://github.com/michaelesmith/EventData/issues"
-    },
     "require": {
-        "php": ">=5.4"
+        "php": "^7.1",
+        "ext-json": "*",
+        "psr/log": "~1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.4",
+        "mockery/mockery": "^1.2",
+        "keen-io/keen-io": "^2.6",
+        "mikey179/vfsStream": "^1.6"
     },
     "suggest": {
         "keen-io/keen-io": "Allows data to be sent to the KeenIO service"
     },
     "autoload": {
-        "psr-0": { "MS\\EventData": "src/" }
+        "psr-4": {"MetricData\\": "src"}
     },
-    "minimum-stability": "beta",
-    "extra": {
-        "branch-alias": {
-            "dev-master": "0.1.x-dev"
-        }
+    "autoload-dev": {
+        "psr-4": {"MetricData\\Tests\\Unit\\": "tests/unit", "MetricData\\Tests\\Common\\": "tests/common"}
     }
 }
