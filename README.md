@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/michaelesmith/EventData.svg)](http://secure.travis-ci.org/michaelesmith/EventData)
+[![Build Status](https://travis-ci.org/michaelesmith/metric-data.svg?branch=master)](https://travis-ci.org/michaelesmith/metric-data)
 
 # What is it?
 This is a library that allows for easy abstraction of metric data collection and storage, allowing it to be stored locally or via external API.
