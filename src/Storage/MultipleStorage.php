@@ -9,7 +9,7 @@ class MultipleStorage implements StorageInterface
     /**
      * @var StorageInterface[]
      */
-    private $storeages;
+    private $storages;
 
     /**
      * @var bool
@@ -21,7 +21,7 @@ class MultipleStorage implements StorageInterface
      */
     public function __construct(array $storeages = [])
     {
-        $this->storeages = $storeages;
+        $this->storages = $storeages;
     }
 
     /**
@@ -34,7 +34,7 @@ class MultipleStorage implements StorageInterface
             throw new \InvalidArgumentException('You can not add a storage after a metric has been stored which could cause unexpected results');
         }
 
-        $this->storeages[] = $storage;
+        $this->storages[] = $storage;
     }
 
     /**
@@ -44,7 +44,7 @@ class MultipleStorage implements StorageInterface
     {
         $this->locked = true;
 
-        foreach ($this->storeages as $storage) {
+        foreach ($this->storages as $storage) {
             $storage->store($metric);
         }
     }
